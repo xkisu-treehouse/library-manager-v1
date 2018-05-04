@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+  form(action="/loans/new", method="POST")
+    label(for="book_id")="Book"
+    select(name="book_id")
+      each book in books
+        option(value=book.id)=book.title
+    label(for="patron_id")="Patron"
+    select(name="patron_id")
+      each patron in patrons
+        option(value=patron.id)=patron.first_name + ' ' + patron.last_name
+    label(for="loaned_on")="Loaned On"
+    input(type="date", name="loaned_on", id="loaned_on")
+    label(for="return_by")="Return By"
+    input(type="date", name="return_by", id="return_by")
+    button(type="submit")="Add Loan"

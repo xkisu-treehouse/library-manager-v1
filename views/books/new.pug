@@ -1,0 +1,13 @@
+extends ../layout
+
+block content
+  form(action="/books/new", method="POST")
+    label(for="title")="Book Title"
+    input(type="text", name="title", id="title", placeholder="Harry Potter", required)
+    label(for="author")="Author"
+    input(type="text", name="author", id="author", placeholder="J. K. Rowling", required)
+    label(for="genre")="Genre"
+    input(type="text", name="genre", id="genre", placeholder="Science Fiction", required)
+    label(for="first_published")="Year Published (Optional)"
+    input(type="number", name="first_published", id="first_published")
+    button(type="submit")="Add Book"

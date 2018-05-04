@@ -1,0 +1,15 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/reset.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    nav
+      ul
+        li: a(href="/loans")="Loans"
+        li: a(href="/books")="Books"
+        li: a(href="/patrons")="Patrons"
+    div(class="content")
+      h1(class="title")=title
+      block content

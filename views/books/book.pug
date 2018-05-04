@@ -1,0 +1,32 @@
+extends ../layout
+
+block content
+  form(action="/books/"+book.id, method="POST")
+    label(for="title")="Book Title"
+    input(type="text", name="title", id="title", placeholder="Harry Potter", required, value=book.title)
+    label(for="author")="Author"
+    input(type="text", name="author", id="author", placeholder="J. K. Rowling", required, value=book.author)
+    label(for="genre")="Genre"
+    input(type="text", name="genre", id="genre", placeholder="Science Fiction", required, value=book.genre)
+    label(for="first_published")="Year Published (Optional)"
+    input(type="number", name="first_published", id="first_published", value=book.first_published)
+    button(type="submit")="Edit Book"
+  table
+    thead 
+      tr
+        td="Patron"
+        td="Loaned On"
+        td="Return By"
+        td="Returned On"
+        td="Actions"
+    tbody
+      each loan in loans
+        tr
+          td: a(href="/patrons/"+loan.patron.id)=loan.patron.first_name + ' ' + loan.patron.last_name
+          td=loan.loaned_on
+          td=loan.return_by
+          td=loan.returned_on
+          if loan.returned_on == null
+            td: a(href="/loans/return/"+loan.id).button="Return"
+          else
+            td

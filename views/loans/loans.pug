@@ -1,0 +1,30 @@
+extends ../layout
+
+block content
+  a.button="New Loan"
+  h3="Filters"
+  ul(class="filter horizontal")
+    li: a(href="/loans")="None"
+    li: a(href="/loans/overdue")="Overdue"
+    li: a(href="/loans/checked")="Checked"
+  table
+    thead 
+      tr
+        td="Book Title"
+        td="Patron"
+        td="Loaned On"
+        td="Return By"
+        td="Returned On"
+        td="Actions"
+    tbody
+      each loan in loans
+        tr
+          td: a(href="/books/"+loan.book.id)=loan.book.title
+          td: a(href="/patrons/"+loan.patron.id)=loan.patron.first_name + ' ' + loan.patron.last_name
+          td=loan.loaned_on
+          td=loan.return_by
+          td=loan.returned_on
+          if loan.returned_on == null
+            td: a(href="/loans/return/"+loan.id).button="Return"
+          else
+            td

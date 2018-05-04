@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+  form(action="/patrons/new", method="POST")
+    label(for="first_name")="First Name"
+    input(type="text", name="first_name", id="first_name", placeholder="Jon", required)
+    label(for="last_name")="Last Name"
+    input(type="text", name="last_name", id="last_name", placeholder="Doe", required)
+    label(for="address")="Address"
+    input(type="text", name="address", id="address", placeholder="1234 City Street",required)
+    label(for="email")="email"
+    input(type="email", name="email", id="email", placeholder="jon.doe@example.com", required)
+    label(for="library_id")="Library ID"
+    input(type="text", name="library_id", id="library_id", required)
+    label(for="zip_code")="ZIP Code"
+    input(type="number", name="zip_code", id="zip_code", placeholder="00000", required)
+    button(type="submit")="Add Patron"

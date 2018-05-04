@@ -1,0 +1,141 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #25ad43;
+  text-decoration: none;
+}
+
+ul.horizontal {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+
+ul.horizontal li {
+  margin-right: 15px;
+  font-size: 16px;
+}
+
+ul.vertical {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+ul.vertical li {
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+ul li a {
+  cursor: pointer;
+}
+
+a.button, button {
+  display: inline-block;
+  margin-bottom: 15px;
+  background: #25ad43;
+  padding: 10px 15px; 
+  color: white;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+body nav {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 12px;
+  padding-left: 15px;
+  border-bottom: 1px solid lightgray;
+}
+
+body nav ul {
+  display: flex;
+  flex-direction: row;
+}
+
+body nav ul li {
+  display: inline-block;
+  margin-right: 25px;
+  font-size: 18px;
+}
+
+body nav ul li a {
+  text-decoration: none;
+}
+
+body .content {
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+body .content>h1.title {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+body .content>*.filter a {
+  color: #25ad43;
+  text-decoration: none;
+}
+
+body .content table {
+  display: table;
+  width: 100%;
+}
+body .content table td {
+  padding: 6px 4px;
+}
+
+body .content table thead {
+  border-bottom: 1px solid lightgray;
+}
+
+body .content table thead td {
+  font-size: 13px;
+}
+
+body .content table tbody td {
+  font-size: 16px;
+}
+
+body .content table tbody td a:not(.button) {
+  text-decoration: none;
+  color: #25ad43;
+}
+
+body .content form {
+  margin: 25px 0;
+}
+
+body .content form label {
+  margin-bottom: 6px;
+  font-size: 18px;
+  display: block;
+}
+
+body .content form input {
+  margin-bottom: 25px;
+  font-size: 18px;
+  display: block;
+  padding: 6px 8px;
+  border: none;
+  border-bottom: 2px solid lightgray;
+}
+
+body .content form select {
+  margin-bottom: 25px;
+  font-size: 18px;
+  display: block;
+  padding: 6px 8px;
+}

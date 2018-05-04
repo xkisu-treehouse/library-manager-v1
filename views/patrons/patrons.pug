@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+  a(href="/patrons/new").button="New Book"
+  table
+    thead 
+      tr
+        td="Name"
+        td="Address"
+        td="Email"
+    tbody
+      each patron in patrons
+        tr
+          td
+            a(href="/patrons/"+patron.id)=patron.first_name + ' ' + patron.last_name
+          td=patron.address
+          td=patron.email

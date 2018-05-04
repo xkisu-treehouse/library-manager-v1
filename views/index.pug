@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  h3="Books"
+  ul.vertical
+    li: a(href="/books")="All Books"
+    li: a(href="/books/checked")="Checked Books"
+    li: a(href="/books/overdue")="Overdue Books"
+    li: a(href="/books/new")="New Book"
+  h3="Loans"
+  ul.vertical
+    li: a(href="/loans")="All Books"
+    li: a(href="/loans/checked")="Checked Loans"
+    li: a(href="/loans/overdue")="Overdue Loans"
+    li: a(href="/loans/new")="New Loan"
+  h3="Patrons"
+  ul.vertical
+    li: a(href="/patrons")="All Patrons"
+    li: a(href="/patrons/new")="New Patron"

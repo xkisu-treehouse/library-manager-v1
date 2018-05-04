@@ -1,0 +1,24 @@
+extends ../layout
+
+block content
+  a(href="/books/new").button="New Book"
+  h3="Filters"
+  ul(class="filter horizontal")
+    li: a(href="/books")="None"
+    li: a(href="/books/overdue")="Overdue"
+    li: a(href="/books/checked")="Checked"
+  table
+    thead 
+      tr
+        td="Title"
+        td="Author"
+        td="Genre"
+        td="Year Released"
+    tbody
+      each book in books
+        tr
+          td
+            a(href="/books/"+book.id)=book.title
+          td=book.author
+          td=book.genre
+          td=book.first_published 
