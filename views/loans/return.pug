@@ -1,0 +1,10 @@
+extends ../layout
+
+block content
+  h3='Book: ' + loan.book.title
+  h3='Patron: ' + loan.patron.first_name + ' ' + loan.patron.last_name
+  form(action="/loans/return", method="POST")
+    label(for="returned_on")="Returned On"
+    input(type="date", name="returned_on", id="returned_on")
+    input(type="hidden",name="loan_id",value=loan.id)
+    button(type="submit")="Return Loan"

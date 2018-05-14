@@ -106,13 +106,38 @@ router.get('/loans/return/:id', function (req, res) {
   const loanid = req.params.id
 
   Loan.findOne({
+    include: [
+      {
+        model: Book,
+        as: 'book',
+        required: true
+      },
+      {
+        model: Patron,
+        as: 'patron',
+        required: true
+      }
+    ],
+    where: {
+      id: loanid
+    }
+  }).then(loan => {
+    res.render('loans/return', {
+      title: 'Return Loan',
+      loan
+    })
+  })
+})
+
+router.post('/loans/return', function (req, res) {
+  const loanid = req.body.loan_id
+  Loan.findOne({
     where: {
       id: loanid
     }
   }).then(loan => {
     loan.updateAttributes({
-      returned_on: new Date(),
-      return_by: new Date()
+      returned_on: new Date(req.body.returned_on)
     }).then(loan => {
       res.redirect('/loans')
     })
